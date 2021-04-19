@@ -10,26 +10,25 @@ public class PersonagemDAO {
     private final static List<Personagem> personagens = new ArrayList<>();
     private static int contadorDeID = 1;
 
-    public void salvar (Personagem personagemSalvo) {
+    public void salvar(Personagem personagemSalvo) {
         personagemSalvo.setId(contadorDeID);
         personagens.add(personagemSalvo);
         contadorDeID++;
 
 
-
     }
 
-    public void editar(Personagem personagem){
+    public void editar(Personagem personagem) {
         Personagem personagemEscolhido = null;
-        for (Personagem p:
-             personagens) {
-            if(p.getId() == personagem.getId()){
+        for (Personagem p :
+                personagens) {
+            if (p.getId() == personagem.getId()) {
                 personagemEscolhido = p;
             }
 
         }
 
-        if(personagemEscolhido != null){
+        if (personagemEscolhido != null) {
             int posicaoDoPersonagem = personagens.indexOf(personagemEscolhido);
             personagens.set(posicaoDoPersonagem, personagem);
         }

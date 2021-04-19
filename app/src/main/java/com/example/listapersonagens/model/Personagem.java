@@ -7,9 +7,9 @@ import java.io.Serializable;
 public class Personagem implements Serializable {
 
     /*Carregando variáveis*/
-    private  String nome;
-    private  String altura;
-    private  String nascimento;
+    private String nome;
+    private String altura;
+    private String nascimento;
     private int id = 0;
 
     public Personagem(String nome, String altura, String nascimento) {
@@ -18,8 +18,12 @@ public class Personagem implements Serializable {
         this.altura = altura;
         this.nascimento = nascimento;
     }
-    @NonNull
-    @Override
+
+
+    public Personagem() {
+
+    }
+
     public String toString() {
         return nome;
     }
@@ -49,12 +53,15 @@ public class Personagem implements Serializable {
     }
 
 
-
     public void setId(int id) {
         this.id = id;
     }
 
     public int getId() {
         return id;
+    }
+
+    public boolean IdValido() {
+        return id > 0;
     }
 }
