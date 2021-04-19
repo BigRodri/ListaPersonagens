@@ -1,19 +1,16 @@
 package com.example.listapersonagens.ui.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.listapersonagens.R;
 import com.example.listapersonagens.dao.PersonagemDAO;
 import com.example.listapersonagens.model.Personagem;
-
-import java.io.Serializable;
 
 public class FormularioPersonagemActivity extends AppCompatActivity {
 
@@ -27,9 +24,6 @@ public class FormularioPersonagemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_personagem);
         setTitle("Formulário do Personagem");
-
-
-
 
         campoNome = findViewById(R.id.edittext_name);
         campoAltura = findViewById(R.id.edittext_altura);
@@ -50,28 +44,13 @@ public class FormularioPersonagemActivity extends AppCompatActivity {
                 dao.salvar(personagemSalvo);
                 finish();
 
-                //startActivity(new Intent(FormularioPersonagemActivity.this, ListaDePersonagemActivity.class));
-
-                /*Toast.makeText(FormularioPersonagemActivity.this,
-                                 personagemSalvo.getNome() + " - " +
-                                      personagemSalvo.getAltura() + " - " +
-                                      personagemSalvo.getNascimento(), Toast.LENGTH_SHORT).show();*/
-
-                //new Personagem(nome, altura, nascimento);
-
                 personagemSalvo.setNome(nome);
                 personagemSalvo.setAltura(altura);
                 personagemSalvo.setNascimento(nascimento);
                 dao.editar(personagemSalvo);
 
-
-
-
-                //Toast.makeText(FormularioPersonagemActivity.this, "Personagem Salvo!",Toast.LENGTH_SHORT).show();
             }
         });
-
-
 
         Intent dados = getIntent();
         Personagem personagem = (Personagem) dados.getSerializableExtra("personagem");
