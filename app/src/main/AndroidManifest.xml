@@ -9,13 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ListaPersonagens">
-        <activity android:name=".ui.activities.FormularioPersonagemActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.activities.FormularioPersonagemActivity"/>
         <activity android:name=".ui.activities.ListaDePersonagemActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

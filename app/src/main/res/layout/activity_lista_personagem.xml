@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton4"
+        android:id="@+id/fab_novo_personagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:fabSize="mini"
@@ -21,7 +21,7 @@
         android:src="@drawable/ic_novo_personagem"/>
 
     <ListView
-        android:id="@+id/Activity_main_lista_personagem"
+        android:id="@+id/lista_personagem"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
