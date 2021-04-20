@@ -19,11 +19,10 @@ public class Personagem implements Serializable {
         this.nascimento = nascimento;
     }
 
-
+    //Serve para que não ocorra erro quando todos os campo estiverem vazios
     public Personagem() {
-
     }
-
+    //Todos os Get e Set abaixo pegam e gravam as informações
     public String toString() {
         return nome;
     }
@@ -52,7 +51,7 @@ public class Personagem implements Serializable {
         this.nascimento = nascimento;
     }
 
-
+    //Pega e grava o ID
     public void setId(int id) {
         this.id = id;
     }
@@ -60,7 +59,7 @@ public class Personagem implements Serializable {
     public int getId() {
         return id;
     }
-
+    //Verifica se o ID é valido
     public boolean IdValido() {
         return id > 0;
     }

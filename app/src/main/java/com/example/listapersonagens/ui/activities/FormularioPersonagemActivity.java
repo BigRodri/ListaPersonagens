@@ -15,13 +15,16 @@ import com.example.listapersonagens.model.Personagem;
 import static com.example.listapersonagens.ui.activities.ConstantesActivities.CHAVE_PERSONAGEM;
 
 public class FormularioPersonagemActivity extends AppCompatActivity {
-
+    //As duas primeiras strings são para setar o Titulo da Appbar
     private static final String TITULO_APPBAR_EDITA_PERSONAGEM = "Editar Personagem";
     private static final String TITULO_APPBAR_NOVO_PERSONAGEM = "Novo Personagem";
+    //Pegar os Edittext das variaveis
     private EditText campoNome;
     private EditText campoAltura;
     private EditText campoNascimento;
+    //Pegar as informações da classe PersonageDAO
     private final PersonagemDAO dao = new PersonagemDAO();
+    //Pegar as informações da classe Personagem
     private Personagem personagem;
 
     @Override
@@ -33,7 +36,8 @@ public class FormularioPersonagemActivity extends AppCompatActivity {
         configuraBotaoSalvar();
         carregaPersonagem();
     }
-
+    /*Metodo usado para carregar o Formulario, se ja existir o personagem
+    ele carrega o editar personagem*/
     private void carregaPersonagem() {
         Intent dados = getIntent();
         if (dados.hasExtra(CHAVE_PERSONAGEM)) {
@@ -45,13 +49,13 @@ public class FormularioPersonagemActivity extends AppCompatActivity {
             personagem = new Personagem();
         }
     }
-
+    //Metodo usado para setar as informações nas variaveis
     private void preencheCampos() {
         campoNome.setText(personagem.getNome());
         campoAltura.setText(personagem.getAltura());
         campoNascimento.setText(personagem.getNascimento());
     }
-
+    //Quando clicar no botão ele salva o personagem
     private void configuraBotaoSalvar() {
         Button botaoSalvar = findViewById(R.id.button_salvar);
         botaoSalvar.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +65,7 @@ public class FormularioPersonagemActivity extends AppCompatActivity {
             }
         });
     }
-
+    //Metodo que finaliza o formulario de criação e volta para a lista de personagens
     private void finalizaFormulario() {
         preenchePersonagem();
         if(personagem.IdValido()){
@@ -73,13 +77,13 @@ public class FormularioPersonagemActivity extends AppCompatActivity {
         }
         finish();
     }
-
+    //Metodo que pega as ID dos Edittext
     private void inicializaCampos() {
         campoNome = findViewById(R.id.edittext_name);
         campoAltura = findViewById(R.id.edittext_altura);
         campoNascimento = findViewById(R.id.edittext_nascimento);
     }
-
+    //Metodo que preenche os campos(variaveis) dos personagens
     private void preenchePersonagem(){
         String nome = campoNome.getText().toString();
         String altura = campoAltura.getText().toString();
